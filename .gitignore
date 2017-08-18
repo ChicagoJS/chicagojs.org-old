@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Logs
 logs
 *.log
@@ -58,7 +58,7 @@ typings/
 # dotenv environment variables file
 .env
 
-=======
+
 # Ignore all node_modules
 node_modules/*
 
@@ -71,4 +71,4 @@ public/bundle.js.map
 
 # NPM errors
 npm-debug.log
->>>>>>> bones/master
+
