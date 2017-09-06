@@ -5,9 +5,9 @@ class MeetupList extends Component {
   render() {
     return (
         <div className="Meetup-list">
-          <h2>Current Javascript Meetups</h2>
-          <h3><a href="https://www.meetup.com/js-chi/">Chicago Javascript Meetup Group</a></h3>
-          <p>Meet other local JavaScripters to network, share knowledge, to review the state of the art, or to dream up new applications.</p>  
+          <h2>Current Chicago Area JavaScript Meetups</h2>
+          <h3><a href="https://www.meetup.com/js-chi/">Chicago JavaScript Meetup Group</a></h3>
+          <p>Meet other local JavaScript Developers to network, share knowledge, to review the state of the art, or to dream up new applications.</p>  
 
           <h3><a href="https://www.meetup.com/Chicago-Nodejs/">Chicago Node.js</a></h3>
           <p>A group to discuss Node.js, its frameworks, and best practices.</p> 
