@@ -1,5 +1,9 @@
-.App {
+.App{
   text-align: center;
+}
+
+.App-intro{
+  text-align: left;
 }
 
 .App-logo {
@@ -14,8 +18,8 @@
   color: white;
 }
 
-.App-intro {
-  font-size: large;
+.Meetup-list{
+  text-align: left;
 }
 
 @keyframes App-logo-spin {

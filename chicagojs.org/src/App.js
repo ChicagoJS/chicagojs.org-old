@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import MeetupList from './MeetupList'
 
 class App extends Component {
   render() {
@@ -13,21 +14,22 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Chicago JS</h2>
         </div>
-        <p className="App-intro">
-          <h2>Current Javascript Meetups</h2>
-          <h3><a href="https://www.meetup.com/js-chi/">Chicago Javascript Meetup Group</a></h3>
-          <p>Meet other local JavaScripters to network, share knowledge, to review the state of the art, or to dream up new applications.</p>  
+        <div className="App-intro">
+          <h1>Coming Soon - Chicago JS!</h1>
 
-          <h3><a href="https://www.meetup.com/Chicago-Nodejs/">Chicago Node.js</a></h3>
-          <p>A group to discuss Node.js, its frameworks, and best practices.</p> 
+          <p>Chicago JS is an effort to organize all of the JavaScript-related developer
+          communities under a single umbrella in the Chicago Metro area.</p>
 
-          <h3><a href="https://www.meetup.com/React-Chicago/">React Chicago</a></h3>
-          <p>This meetup is focused on bringing everyone together who have an interest in React, React Native, and it's ecosystem.</p>
+          <p>This site is currently a placeholder while a site gets designed.  Feel free to
+          contact <a href="http://mike-hostetler.com/contact">Mike Hostetler</a> and join
+          our <a href="https://groups.google.com/forum/#!forum/chicago-js">Google Group</a>.</p>
 
-          <h3><a href="https://www.meetup.com/AngularJS-Chicago/">AngularJS Chicago</a></h3>
-          <p>AngularJS meetup group in Chicago, IL discussing how to leverage and evolve the 'Superheroic JavaScript MVW Framework'.</p>
+          <p>Our community currently lives on the <a href="http://chicagotechslack.com">Chicago Tech Slack</a> in the <a href="slack://channel?team=T08UCAYN6&id=C0CJC2HPA">#nodejs</a> and <a href="slack://channel?team=T08UCAYN6&id=C08UN3E3W">#javascript</a> channels.</p>
 
-        </p>
+          <p>Source for this page is available in our <a href="https://github.com/ChicagoJS">GitHub Organization</a>.
+          PR's always welcome.</p>
+        </div>
+        <MeetupList/>
       </div>
     );
   }
