@@ -29,6 +29,7 @@ class App extends Component {
           <p>Source for this page is available in our <a href="https://github.com/ChicagoJS">GitHub Organization</a>.
           PR's always welcome.</p>
         </div>
+        <br/>
         <MeetupList/>
       </div>
     );
