@@ -12,6 +12,7 @@ import CommunityContainer from './CommunityContainer'
 import EventsContainer from './EventsContainer'
 import ResourcesContainer from './ResourcesContainer'
 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -31,8 +32,22 @@ class App extends Component {
     axios.get('http://localhost:3001/api/meetup/ang')
     .then((ok)=>{this.setState({ang: ok.data})})
   }
+
   render(){
     var arr = this.state.node.concat(this.state.react, this.state.ang, this.state.js)
+    arr.sort(function(a, b){
+      return a.time-b.time
+    })
+
+
+    const MyEventsContainer = (props) => {
+      return (
+        <EventsContainer 
+          list={arr}
+          {...props}
+        />
+      );
+    }
 
     return (
       <Router>
@@ -41,7 +56,7 @@ class App extends Component {
           <div className="App-intro">
             <Route exact path="/" component={AboutContainer}/>
             <Route exact path="/home" component={AboutContainer}/>
-            <Route exact path="/events" component={EventsContainer} list={arr}/>
+            <Route exact path="/events" render={MyEventsContainer}/>
             <Route path="/jobs" component={JobsContainer}/>
             <Route path="/resources" component={ResourcesContainer}/>
             <Route path="/community" component={CommunityContainer}/>
