@@ -9,19 +9,6 @@ class EventsContainer extends Component {
     this.state = {node: [], react:[], ang:[], js:[]};
   }
 
-  componentDidMount(){
-    axios.get('http://localhost:3001/api/meetup/node')
-    .then((ok)=>{this.setState({node: ok.data})})
-    
-    axios.get('http://localhost:3001/api/meetup/js')
-    .then((ok)=>{this.setState({js: ok.data})})
-    
-    axios.get('http://localhost:3001/api/meetup/react')
-    .then((ok)=>{this.setState({react: ok.data})})
-    
-    axios.get('http://localhost:3001/api/meetup/ang')
-    .then((ok)=>{this.setState({ang: ok.data})})
-  }
 
   componentDidUpdate(){
     var acc = document.getElementsByClassName("accordion");

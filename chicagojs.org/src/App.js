@@ -11,7 +11,9 @@ import AboutContainer from './AboutContainer'
 import CommunityContainer from './CommunityContainer'
 import EventsContainer from './EventsContainer'
 import ResourcesContainer from './ResourcesContainer'
+import HomeContainer from './HomeContainer'
 
+const apiaddr = "https://sheltered-castle-51967.herokuapp.com/";
 
 class App extends Component {
   constructor(props) {
@@ -20,16 +22,16 @@ class App extends Component {
   }
 
   componentDidMount(){
-    axios.get('http://localhost:3001/api/meetup/node')
+    axios.get(apiaddr+'api/meetup/node')
     .then((ok)=>{this.setState({node: ok.data})})
     
-    axios.get('http://localhost:3001/api/meetup/js')
+    axios.get(apiaddr+'api/meetup/js')
     .then((ok)=>{this.setState({js: ok.data})})
     
-    axios.get('http://localhost:3001/api/meetup/react')
+    axios.get(apiaddr+'api/meetup/react')
     .then((ok)=>{this.setState({react: ok.data})})
     
-    axios.get('http://localhost:3001/api/meetup/ang')
+    axios.get(apiaddr+'api/meetup/ang')
     .then((ok)=>{this.setState({ang: ok.data})})
   }
 
@@ -54,8 +56,8 @@ class App extends Component {
         <div className="App">
           <Header/>
           <div className="App-intro">
-            <Route exact path="/" component={AboutContainer}/>
-            <Route exact path="/home" component={AboutContainer}/>
+            <Route exact path="/" component={HomeContainer}/>
+            <Route exact path="/home" component={HomeContainer}/>
             <Route exact path="/events" render={MyEventsContainer}/>
             <Route path="/jobs" component={JobsContainer}/>
             <Route path="/resources" component={ResourcesContainer}/>
