@@ -23,16 +23,16 @@ class App extends Component {
 
   componentDidMount(){
     axios.get(apiaddr+'api/meetup/node')
-    .then((ok)=>{this.setState({node: ok.data})})
+    .then((evtInfo)=>{this.setState({node: evtInfo.data})})
     
     axios.get(apiaddr+'api/meetup/js')
-    .then((ok)=>{this.setState({js: ok.data})})
+    .then((evtInfo)=>{this.setState({js: evtInfo.data})})
     
     axios.get(apiaddr+'api/meetup/react')
-    .then((ok)=>{this.setState({react: ok.data})})
+    .then((evtInfo)=>{this.setState({react: evtInfo.data})})
     
     axios.get(apiaddr+'api/meetup/ang')
-    .then((ok)=>{this.setState({ang: ok.data})})
+    .then((evtInfo)=>{this.setState({ang: evtInfo.data})})
   }
 
   render(){
