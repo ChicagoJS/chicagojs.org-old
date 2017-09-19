@@ -13,17 +13,15 @@ class EventsContainer extends Component {
 
 
     return (
-        <div className="Meetup-list">
-          
-          <div className="center">
-          {this.props.list.map((event, i)=>{
-            return (
-              <Event event={event} key={i}/>
-              )
-          })}
-          </div>
-
+      <div className="Meetup-list">
+        <div className="center">
+        {this.props.list.map((event, i)=>{
+          return (
+            <Event event={event} key={i}/>
+            )
+        })}
         </div>
+      </div>
     );
   }
 }
