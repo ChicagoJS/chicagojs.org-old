@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 class AboutContainer extends Component {
   render() {
     return (
+
 	    <div className="App-intro">
         <h1>Coming Soon - Chicago JS!</h1>
 
@@ -19,6 +20,7 @@ class AboutContainer extends Component {
         <p>Source for this page is available in our <a href="https://github.com/ChicagoJS">GitHub Organization</a>.
         PR's always welcome.</p>
       </div>
+
     );
   }
 }

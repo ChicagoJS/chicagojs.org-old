@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 class CommunityContainer extends Component {
   render() {
     return (
+
       <div>
         <div className="Meetup-list">
         <h2>Current Javascript Meetups</h2>
@@ -21,6 +22,7 @@ class CommunityContainer extends Component {
         <p>AngularJS meetup group in Chicago, IL discussing how to leverage and evolve the 'Superheroic JavaScript MVW Framework'.</p>
         </div>
       </div>
+
     );
   }
 }

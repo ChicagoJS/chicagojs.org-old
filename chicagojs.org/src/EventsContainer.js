@@ -22,6 +22,7 @@ class EventsContainer extends Component {
         })}
         </div>
       </div>
+
     );
   }
 }

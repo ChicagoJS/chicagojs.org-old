@@ -11,15 +11,18 @@ import AboutContainer from './AboutContainer'
 import CommunityContainer from './CommunityContainer'
 import EventsContainer from './EventsContainer'
 import ResourcesContainer from './ResourcesContainer'
+
 import HomeContainer from './HomeContainer'
 
 const apiaddr = "https://sheltered-castle-51967.herokuapp.com/";
+
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {node: [], react:[], ang:[], js:[]};
   }
+
 
   componentDidMount(){
     axios.get(apiaddr+'api/meetup/node')
@@ -50,6 +53,7 @@ class App extends Component {
         />
       );
     }
+
 
     return (
       <Router>

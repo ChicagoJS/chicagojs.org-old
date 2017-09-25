@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 class Header extends Component {
   render() {
     return (
+
       <div className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <img src={logo} className="App-logo" alt="logo" />
@@ -18,6 +19,7 @@ class Header extends Component {
         <Link to={`/community`}>Community</Link>
         <Link to={`/about`}>About</Link>
       </div>
+
     );
   }
 }
