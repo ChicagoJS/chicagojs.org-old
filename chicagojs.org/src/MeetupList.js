@@ -50,6 +50,7 @@ class MeetupList extends Component {
 
     return (
         <div className="Meetup-list">
+
           
           <div className="center">
           {this.state.js.map((event)=>{
@@ -58,6 +59,7 @@ class MeetupList extends Component {
               )
           })}
           </div>
+
 
           <div className="center">
           {this.state.node.map((event)=>{
