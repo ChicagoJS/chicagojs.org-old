@@ -1,38 +1,76 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css';
-import MeetupList from './MeetupList'
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom'
+import axios from 'axios'
+import Header from './Header'
+import JobsContainer from './JobsContainer'
+import AboutContainer from './AboutContainer'
+import CommunityContainer from './CommunityContainer'
+import EventsContainer from './EventsContainer'
+import ResourcesContainer from './ResourcesContainer'
+
+import HomeContainer from './HomeContainer'
+
+const apiaddr = "https://sheltered-castle-51967.herokuapp.com/";
+
 
 class App extends Component {
-  render() {
+  constructor(props) {
+    super(props);
+    this.state = {node: [], react:[], ang:[], js:[]};
+  }
+
+
+  componentDidMount(){
+    axios.get(apiaddr+'api/meetup/node')
+    .then((evtInfo)=>{this.setState({node: evtInfo.data})})
+    
+    axios.get(apiaddr+'api/meetup/js')
+    .then((evtInfo)=>{this.setState({js: evtInfo.data})})
+    
+    axios.get(apiaddr+'api/meetup/react')
+    .then((evtInfo)=>{this.setState({react: evtInfo.data})})
+    
+    axios.get(apiaddr+'api/meetup/ang')
+    .then((evtInfo)=>{this.setState({ang: evtInfo.data})})
+  }
+
+  render(){
+    var arr = this.state.node.concat(this.state.react, this.state.ang, this.state.js)
+    arr.sort(function(a, b){
+      return a.time-b.time
+    })
+
+
+    const MyEventsContainer = (props) => {
+      return (
+        <EventsContainer 
+          list={arr}
+          {...props}
+        />
+      );
+    }
+
+
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <img src={logo} className="App-logo" alt="logo" />
-          <img src={logo} className="App-logo" alt="logo" />
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Chicago JS</h2>
+      <Router>
+        <div className="App">
+          <Header/>
+          <div className="App-intro">
+            <Route exact path="/" component={HomeContainer}/>
+            <Route exact path="/home" component={HomeContainer}/>
+            <Route exact path="/events" render={MyEventsContainer}/>
+            <Route path="/jobs" component={JobsContainer}/>
+            <Route path="/resources" component={ResourcesContainer}/>
+            <Route path="/community" component={CommunityContainer}/>
+            <Route path="/about" component={AboutContainer}/>
+          </div>      
         </div>
-        <div className="App-intro">
-          <h1>Coming Soon - Chicago JS!</h1>
-
-          <p>Chicago JS is an effort to organize all of the JavaScript-related developer
-          communities under a single umbrella in the Chicago Metro area.</p>
-
-          <p>This site is currently a placeholder while a site gets designed.  Feel free to
-          contact <a href="http://mike-hostetler.com/contact">Mike Hostetler</a> and join
-          our <a href="https://groups.google.com/forum/#!forum/chicago-js">Google Group</a>.</p>
-
-          <p>Our community currently lives on the <a href="http://chicagotechslack.com">Chicago Tech Slack</a> in the <a href="slack://channel?team=T08UCAYN6&id=C0CJC2HPA">#nodejs</a> and <a href="slack://channel?team=T08UCAYN6&id=C08UN3E3W">#javascript</a> channels.</p>
-
-          <p>Source for this page is available in our <a href="https://github.com/ChicagoJS">GitHub Organization</a>.
-          PR's always welcome.</p>
-        </div>
-        <br/>
-        <MeetupList/>
-      </div>
-    );
+      </Router>
+    )
   }
 }
 
