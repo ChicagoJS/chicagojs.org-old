@@ -17,6 +17,9 @@ class MeetupList extends Component {
 
           <h3><a href="https://www.meetup.com/AngularJS-Chicago/">AngularJS Chicago</a></h3>
           <p>AngularJS meetup group in Chicago, IL discussing how to leverage and evolve the 'Superheroic JavaScript MVW Framework'.</p>
+
+          <h3><a href="https://www.meetup.com/Chicago-Ember-js/">Chicago Ember.js</a></h3>
+          <p>Chicago's Ember.js group is committed to creating a robust community built around the philosophy of building beautifully crafted web applications with the help of Ember.js.</p>
         </div>
     );
   }
